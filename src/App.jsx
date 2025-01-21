@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router';
 import Home from './components/Home/Home';
 import Usres, { UsersLoader } from './components/Usres/Usres';
-import Posts from './components/Posts/Posts';
+import Posts, { postsLoader } from './components/Posts/Posts';
 import About from './components/About/About';
 import RootLayout from './components/Layout/RootLayout';
 import { RouterProvider } from 'react-router';
@@ -11,6 +11,8 @@ import ContactForm from './components/ContactForm/ContactForm';
 import NotFount from './components/NotFound/NotFount';
 import UsersLayout from './components/UsersLayout/UsersLayout';
 import User from './components/Usre/User';
+import PostsLayout from './components/PostsLayout/PostsLayout';
+import Post from './components/Post/Post';
 
 
 function App() {
@@ -24,7 +26,10 @@ function App() {
           <Route index element={<Usres />} loader={UsersLoader} />
           <Route index element={<User />} />
         </Route>
-          <Route path='posts' element={<Posts />} />
+        <Route path='posts' element={<PostsLayout />}>
+          <Route index element={<Posts />} loader={postsLoader} />
+          <Route index element={<Post />} />
+        </Route>
           <Route path='about' element={<About />} />
           <Route path='contact' element={<ContactLayout />} >
             <Route path='info' element={<ContactInfo />} />
