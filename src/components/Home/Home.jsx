@@ -1,13 +1,8 @@
-import { Outlet } from "react-router";
-import Navber from "../Navber/Navber";
-
 
 const Home = () => {
     return (
         <div>
-            <Navber></Navber>
-            <h1>Hello This is a Home Tab</h1>
-            <Outlet></Outlet>
+            <h1>This is a Home Tab</h1>
         </div>
     );
 };
