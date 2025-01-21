@@ -13,6 +13,8 @@ import UsersLayout from './components/UsersLayout/UsersLayout';
 import User from './components/Usre/User';
 import PostsLayout from './components/PostsLayout/PostsLayout';
 import Post from './components/Post/Post';
+import PostDetails, { PostDetailsLoader } from './components/PostDetails/PostDetails';
+import Error from './components/PostDetails/Error';
 
 
 function App() {
@@ -26,9 +28,10 @@ function App() {
           <Route index element={<Usres />} loader={UsersLoader} />
           <Route index element={<User />} />
         </Route>
-        <Route path='posts' element={<PostsLayout />}>
+        <Route path='posts' element={<PostsLayout />} errorElement={<Error />} >
           <Route index element={<Posts />} loader={postsLoader} />
           <Route index element={<Post />} />
+          <Route path=':id' element={<PostDetails />} loader={PostDetailsLoader}/>
         </Route>
           <Route path='about' element={<About />} />
           <Route path='contact' element={<ContactLayout />} >

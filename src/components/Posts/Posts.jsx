@@ -24,5 +24,8 @@ export default Posts;
 
 export const postsLoader = async () => {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    if (!res.ok) {
+        throw Error('Could not found this page post')
+    }
     return res.json();
 }
