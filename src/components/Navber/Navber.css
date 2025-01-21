@@ -15,6 +15,7 @@ nav {
 }
 
 a.active {
+    /* text-decoration: underline; */
     color: red;
 }
 
