@@ -1,0 +1,15 @@
+.Link{
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+    font-family: Arial, sans-serif;
+}
+
+a.active {
+    color: red;
+}
